@@ -1,0 +1,217 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(233, 233, 233);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+.menu-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    padding: 0px 5rem;  
+    width: 100%;
+    height: 100%;
+}
+
+.logo{
+    height: 100%;
+    width: 100px;
+}
+.support{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.support .support-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.support .support-items a{
+    font-size: 17px;
+    color: blue;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px;
+}
+.support .support-items a:hover{
+    text-decoration: underline;
+}
+
+/* PERFIL DESPLEGABLE */
+.profile-dropdown{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+/*foto perfil*/
+.profile-dropdown .profile-dropdown-btn .profile-img{
+    display: flex;
+    align-items: center;
+}
+.profile-dropdown .profile-dropdown-btn .profile-img img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 9999px;
+}
+
+.profile-dropdown .profile-dropdown-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 7px;
+    font-size: 17px;
+    border: 1px solid #484848;
+    border-radius: 50px;
+    cursor: pointer;
+    ;
+}
+.profile-dropdown .profile-dropdown-btn span{
+    padding: 0 12px;
+}
+.profile-dropdown .profile-dropdown-btn img{
+    width: 25px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9999px;
+}
+
+/* CONFIGUARAR PERFIL */
+.profile-confi{
+    position: absolute;
+    max-width: 300px;
+    top: 50px;
+    left: -40%;
+    list-style: none;
+    background: #ffffff;
+    border: 1px solid #484848;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s ease-in-out 
+}
+.profile-confi.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.profile-confi .profile-confi-item:hover{
+    background: #8a8a8a;
+}
+.profile-confi .profile-confi-item a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+    padding: 8px 40px 8px 12px;
+}
+.profile-confi .profile-confi-item a img{
+    width: 18px;
+    height: 100%;
+    margin-right: 6px;
+    object-fit: cover;
+
+}
+
+/*CONTENIDO*/
+.contenido{
+    position: relative;
+    justify-content: flex-start;
+    display: flex;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
+.confi-account{
+    position: relative;
+    flex-basis: 24%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem 2rem 2rem;
+    align-items: center;
+    align-self: flex-start;
+}
+.confi-bar{
+    position: relative;
+    background: rgb(200, 200, 200);
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+    border-radius: 10px;
+    border: 1px solid #a1a1a1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+}
+.confi-bar .confi-item{
+    border-bottom: 1px solid #8a8a8a;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.confi-bar .confi-item:hover{
+    background: #a2a2a2af;
+}
+.confi-bar .confi-item.active{
+    background: #a2a2a2af;
+}
+.confi-bar .confi-item img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.confi-bar .confi-item button{
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    text-emphasis: none;
+    text-align: left;
+    border: 0;
+}
+
+.confi-content{
+    position: relative;
+    flex-basis: 76%;
+    padding: 2rem 2rem 2rem 1rem;
+}
+
+@media screen and (max-width: 650px){
+    .profile-content .username-profile .data-profile{
+        flex-direction: column;
+        align-items: start;
+    }
+}

@@ -1,0 +1,228 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+
+}
+
+body{
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    width: 1000px;
+    height: 500px;
+    margin: 70px auto;
+    display:  flex;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+
+/*CUBO IZQUIERDO*/
+.cubo1{
+    width: 38%;
+    position: relative;
+    background: linear-gradient(315deg, rgba(38,4,72,1) 66%, rgba(116,4,79,1) 100%);
+}
+
+.info{
+    color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem 2rem;
+}
+
+.info h2{
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+.info .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info .ubi{
+    width: 100px;
+    margin-bottom: 25px;
+}
+.info span{
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.contact{
+    display: flex;
+    margin-bottom: 24px;
+}
+.contact img{
+    width: 22px;
+    margin-right: 10px;
+}
+.contact p{
+    color: #ff0044;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.redsocial{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.redsocial p{
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.social-icons{
+    display: flex;
+}
+.social-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 9999px;
+    transition: 0.3s;
+}
+.social-icons a:hover{
+    background: #ff004498;
+}
+.social-icons img{
+    width: 20px;
+    height: 20px;
+}
+
+/*CUBO DERECHO*/
+.cubo2{
+    width: 62%;
+}
+
+.formu,form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem 2rem;
+}
+
+.formu h1{
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+.mensajes{
+    font-size: 18px;
+    background: red;
+    height: 100%;
+    width: 70%;
+    border-radius: 5px;
+    border: 2px solid rgb(131, 0, 0);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+input[type="text"], [type="password"]{
+    outline: none;
+    display: block;
+    padding: 5px;
+    width: 90%;
+    height: 2.4rem;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid rgb(149, 149, 149);
+    margin: 10px auto;
+}
+input[type="text"]:focus, [type="password"]:focus{
+    border-bottom: 2px solid #0f6ebb;
+}
+.ojo{
+    position: relative;
+    display: inline-block;
+}
+.eyes{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 24px;
+    transform: translateY(-30%);
+    opacity: 0.3;
+    cursor: pointer;
+}
+.eyes:hover{
+    opacity: 0.8;
+}
+
+input[type="submit"]{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px ;
+    border-color: rgb(123, 209, 255);
+    color: #ffffff;
+    background: linear-gradient(315deg, rgba(38,4,72,1) 66%, rgba(116,4,79,1) 100%);
+    margin: 16px auto;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+input[type="submit"]:hover{
+    background: linear-gradient(315deg, rgb(7, 66, 125) 40%, rgb(121, 11, 172) 100%);
+}
+
+@media screen and (max-width: 1000px){
+    .form{
+        height: auto;
+        width: 95%;
+        flex-direction: column-reverse;
+        margin: 26px auto;
+        margin-bottom: 20px;
+    }
+    .formu, form{
+        padding: 1rem 0rem;
+    }
+    .cubo1{
+        width: 100%;
+    }
+    .cubo2{
+        width: 100%;
+    }
+    .nom-ape input[type="text"]{
+        margin: 10px 34px auto;
+         width: 90%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .form{
+        width: 95%;
+        margin: 26px auto;
+    }
+    .nom-ape {
+        flex-direction: column;
+    }
+    .nom-ape input[type="text"]{
+        margin: 10px  auto;
+         width: 90%;
+    }
+
+}

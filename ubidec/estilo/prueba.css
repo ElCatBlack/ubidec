@@ -1,0 +1,253 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(233, 233, 233);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+.menu-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #c9c9c9;
+    padding: 0px 5rem;  
+    width: 100%;
+    height: 100%;
+}
+
+.logo{
+    height: 100%;
+    width: 100px;
+}
+.support{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.support .support-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.support .support-items a{
+    font-size: 17px;
+    color: blue;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px;
+}
+.support .support-items a:hover{
+    text-decoration: underline;
+}
+
+/* PERFIL DESPLEGABLE */
+.profile-dropdown{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+/*foto perfil*/
+.profile-dropdown .profile-dropdown-btn .profile-img{
+    display: flex;
+    align-items: center;
+}
+.profile-dropdown .profile-dropdown-btn .profile-img img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 9999px;
+}
+
+.profile-dropdown .profile-dropdown-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 7px;
+    font-size: 17px;
+    border: 1px solid #484848;
+    border-radius: 50px;
+    cursor: pointer;
+    ;
+}
+.profile-dropdown .profile-dropdown-btn span{
+    padding: 0 12px;
+}
+.profile-dropdown .profile-dropdown-btn img{
+    width: 25px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9999px;
+}
+
+/* CONFIGUARAR PERFIL */
+.profile-confi{
+    position: absolute;
+    max-width: 300px;
+    top: 50px;
+    left: -40%;
+    list-style: none;
+    background: #ffffff;
+    border: 1px solid #484848;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s ease-in-out 
+}
+.profile-confi.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.profile-confi .profile-confi-item:hover{
+    background: #8a8a8a;
+}
+.profile-confi .profile-confi-item a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+    padding: 8px 40px 8px 12px;
+}
+.profile-confi .profile-confi-item a img{
+    width: 18px;
+    height: 100%;
+    margin-right: 6px;
+    object-fit: cover;
+
+}
+
+/*CONTENIDO*/
+.contenido{
+    position: relative;
+    justify-content: flex-start;
+    display: flex;
+    padding: 0;
+    height: 100vh; 
+}
+
+
+/*CONTACTOS*/
+.menu-down{
+    background: rgb(13 5 36);;
+    height: auto;
+    width: 100%;
+    min-height: 300px;
+}
+/*cabezera*/
+.fcabezera{
+    padding: 20px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flogo img{
+    height: 100%;
+    width: 65px;
+}
+
+.redes{
+    display: flex;
+    align-items: center;
+}
+
+.redes .ficons{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    width: fit-content;
+    border-radius: 9999px;
+    padding: 12px;
+    transition: 0.3s;
+}
+.redes .ficons:hover{
+    background-color: rgb(228, 38, 38);
+}
+
+.redes .ficons img{
+    width: 25px;
+}
+
+/*contenido*/
+.footer{
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-links{
+    text-align: left;
+}
+
+.footer-links h2{
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #c9c9c9;
+    position: relative;
+}
+.footer-links h2::before{
+    content: '';
+    width: 64px;
+    height: 2px;
+    position: absolute;
+    background: rgb(228, 38, 38);
+    bottom: -2px;
+}
+
+.footer-links li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 8px;
+}
+.footer-links li a{
+    display: flex;
+    align-items: center;
+    color: #ff0000;
+    text-decoration: none;
+}
+.footer-links li a:hover{
+    text-decoration:underline;
+}
+.footer-links span{
+    color: #c9c9c9;
+    word-break: break-word;
+}
+.footer-links img{
+    width: 20px;
+    margin-right: 6px;
+}
+
+@media screen and (max-width: 650px){
+    .menu-content{
+        flex-direction: column;
+    }
+    .logo{
+        width: 80px;
+    }
+    .support{
+        margin-bottom: 10px;
+    }
+}

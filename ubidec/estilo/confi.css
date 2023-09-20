@@ -1,0 +1,813 @@
+/*EDITAR PERFIL*/
+.profile-content{
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    background: rgb(200, 200, 200);
+    border-radius: 6px;
+    border: 1px solid #a1a1a1;
+}
+.profile-content .foto-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+.profile-content .foto-profile img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 0 10px;
+    border-radius: 9999px;
+    border: 3px solid black;
+}
+
+.profile-content .username-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0 20px;
+}
+.profile-content .username-profile .info-edit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.profile-content .username-profile .info-edit h1{
+    text-decoration: underline;
+}
+.profile-content .username-profile .info-edit button{
+    cursor: pointer;
+    background: white;
+    font-size: 16px;
+    padding: 2px 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+
+.profile-content .username-profile .data-profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+}
+.profile-content .username-profile .data-profile span{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
+.profile-content .username-profile .data-profile p{
+    color: #484848;
+}
+
+.profile-content .Info-escuela{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+.profile-content  .Info-escuela h1{
+    text-decoration: underline;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.profile-content  .Info-escuela .data-escuela{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+}
+.profile-content  .Info-escuela .data-escuela span{
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
+.profile-content  .Info-escuela .data-escuela p{
+    color: #484848;
+}
+
+/*CONTACTOS*/
+.menu-down{
+    background: rgb(13 5 36);;
+    height: auto;
+    width: 100%;
+    min-height: 300px;
+}
+/*cabezera*/
+.fcabezera{
+    padding: 20px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flogo img{
+    height: 100%;
+    width: 65px;
+}
+
+.redes{
+    display: flex;
+    align-items: center;
+}
+
+.redes .ficons{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    width: fit-content;
+    border-radius: 9999px;
+    padding: 12px;
+    transition: 0.3s;
+}
+.redes .ficons:hover{
+    background-color: rgb(228, 38, 38);
+}
+
+.redes .ficons img{
+    width: 25px;
+}
+
+/*FOOTER*/
+.footer{
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-links{
+    text-align: left;
+}
+
+.footer-links h2{
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #c9c9c9;
+    position: relative;
+}
+.footer-links h2::before{
+    content: '';
+    width: 64px;
+    height: 2px;
+    position: absolute;
+    background: rgb(228, 38, 38);
+    bottom: -2px;
+}
+
+.footer-links li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 8px;
+}
+.footer-links li a{
+    display: flex;
+    align-items: center;
+    color: #ff0000;
+    text-decoration: none;
+}
+.footer-links li a:hover{
+    text-decoration:underline;
+}
+.footer-links span{
+    color: #c9c9c9;
+    word-break: break-word;
+}
+.footer-links img{
+    width: 20px;
+    margin-right: 6px;
+}
+
+/*MODAL editar el pérfil*/
+.modal{
+    background: #3b42484f;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s all;
+    visibility: hidden;
+    opacity: 0;
+}
+.modal.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-target{
+    position: relative;
+    background: #c9c9c9;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    max-height: 490px;
+    max-width: 450px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid rgba(47, 47, 47, 0.567);
+}
+.modal-header .cerrar-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 20px;
+    top: 16px;
+    background: transparent;
+    border-radius: 9999px;
+}
+.modal-header .cerrar-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 600;
+    background: transparent;
+    color: black;
+    border: 0;
+    border-radius: 9999px;
+}
+.modal-header .cerrar-btn button:hover{
+    background: #a1a1a1;
+}
+.modal-content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    overflow: hidden;
+}
+/*editar fotos*/
+.modal-content .perfil-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.modal-content .perfil-photo .old-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+}
+.modal-content .perfil-photo .old-photo img{
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    border: 3px solid black;
+    border-radius: 9999px;
+}
+.perfil-photo .new-photo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 9999px;
+    background: transparent;
+    opacity: 0;
+}
+.perfil-photo .new-photo:hover{
+    background: rgba(12, 12, 12, 0.384);
+    opacity: 1;
+}
+.perfil-photo .new-photo img{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+/*formulario actualizar*/
+.form-edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-edit .error span{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff0000;
+    border-radius: 20px;
+    border: 2px solid #ff6565;
+    padding: 0.4rem 2rem;
+}
+.new-photo input[type=file]{
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 9999px;
+}
+.form-edit input[type=text]{
+    outline: none;
+    display: block;
+    padding: 5px;
+    width: 90%;
+    height: 2.4rem;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid rgb(149, 149, 149);
+    margin: 10px auto;
+}
+.form-edit input[type=text]:focus{
+    border-bottom: 2px solid #0f6ebb;
+}
+.form-edit input[type="submit"]{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+    width: 115px;
+    border-radius: 5px ;
+    border-color: rgb(123, 209, 255);
+    color: #ffffff;
+    background: linear-gradient(315deg, rgba(38,4,72,1) 66%, rgba(116,4,79,1) 100%);
+    margin: 16px auto;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+/*CONTRASEÑA Y SEGURIDAD*/
+.password-content{
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    background: rgb(200, 200, 200);
+    border-radius: 6px;
+    border: 1px solid #a1a1a1;
+}
+.password-content .password-original{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+.password-content .password-original .eye-ori{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.password-content .eye{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 300px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+.password-content .eye:hover{
+    opacity: 0.8;
+}
+.password-content .password-original input[type=password],input[type=text]{
+    outline: none;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    max-width: 350px;
+    height: 2.4rem;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid rgb(149, 149, 149);
+    margin: 10px 0;
+}
+.password-content .password-original input[type=password].error{
+    border-bottom: 2px solid #eb0909;
+}
+.password-content .password-original p{
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.password-content .password-original p img{
+    height: 20px;
+    width: 20px;
+    margin-right: 6px;
+}
+.password-content .password-original a{
+    font-size: 14px;
+}
+.password-content .password-original input[type=password]:focus{
+    border-bottom: 2px solid #0f6ebb;
+}
+.password-content .password-new{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 25px;
+}
+.password-content .password-new p{
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.password-content .password-new p img{
+    height: 20px;
+    width: 20px;
+    margin-right: 6px;
+}
+.password-content .password-new input[type=password]{
+    outline: none;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    max-width: 350px;
+    height: 2.4rem;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid rgb(149, 149, 149);
+    margin: 10px 0;
+}
+.password-content .password-new .eye-new1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.password-content .password-new .eye-new2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.password-content .password-new input[type=password].error{
+    border-bottom: 2px solid #eb0909;
+}
+.password-content .password-new input[type=password]:focus{
+    border-bottom: 2px solid #0f6ebb;
+}
+.password-content .adverten{
+    display: flex;
+    align-items: center;
+    text-align: start;
+    justify-content: start;
+    margin-top: 10px;
+    max-width: 60%;
+}
+
+.password-content .save-password{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.password-content .save-password input[type=submit]{
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px;
+    width: 110px;
+    border-radius: 5px;
+    border-color: rgb(106, 106, 106);
+    color: #141414;
+    /* background: linear-gradient(315deg, rgba(38,4,72,1) 66%, rgba(116,4,79,1) 100%); */
+    margin: 16px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+
+}
+/*AYUDA Y SOPORTE*/
+.ayudaS-content{
+    position: relative;
+    
+    overflow: hidden;
+    background: rgb(200, 200, 200);
+    border-radius: 6px;
+    border: 1px solid #a1a1a1;
+    text-align: start;
+}
+.ayudaS-content .help-contact{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 0 10px ;
+}
+.ayudaS-content .help-contact .we-contact{
+    list-style: none;
+}
+.ayudaS-content .questions{
+    margin-top: 10px;
+    
+}
+.ayudaS-content .questions .title-questions{
+    padding: 0 10px ;
+}
+.ayudaS-content .questions .item-questions{
+    border-bottom: 1px solid #8a8a8a;
+    position: relative;
+    
+    width: 100%;
+}
+.ayudaS-content .questions .item-questions .report{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    text-emphasis: none;
+}
+.ayudaS-content .questions .item-questions .report .arrow{
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+}
+.ayudaS-content .questions .item-questions .report .arrow img{
+    width: 30px;
+    height: 30px;
+    transition: transform .3s;
+}
+.ayudaS-content .questions .item-questions .report.active .arrow img{
+    transform: rotate(90deg);
+}
+.ayudaS-content .questions .item-questions .sub-report{
+    background: #aeaeaea9;
+    padding: 0 10px ;
+    overflow: hidden;
+    height: 0;
+    transition: 0.3s;
+}
+
+/*EDITAR INSTITUCION*/
+
+.edit-institucion{
+    position: relative;
+    overflow: hidden;
+    background: rgb(200, 200, 200);
+    border-radius: 6px;
+    border: 1px solid #a1a1a1;
+    text-align: left;
+}
+
+.edit-institucion .header-edit{
+    border-bottom: 1px solid #8a8a8a;
+    padding: 10px;
+}
+.edit-institucion .header-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit-institucion .header-edit h1{
+    font-size: 28px;
+}
+
+.edit-institucion .edit-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+.edit-institucion .edit-content h2{
+    margin-bottom: 5px;
+}
+
+/*CONTENIDO ESCUELAS*/
+.content-escuelas{
+    display: flex;
+    position: relative;
+    max-height: 250px;
+    overflow: hidden;
+    background: rgb(200, 200, 200);
+    border-radius: 0 0 6px;
+}
+.content-escuelas .foto-escuela{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-escuelas .foto-escuela .image-direccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+}
+.content-escuelas .foto-escuela .image-direccion img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.info-escuela{
+    width: calc(100% - 220px);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+
+}
+
+.info-escuela .name-school{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/*informacion general de la escuela*/
+.info-escuela .name-school .title-direccion{
+    width: 100%;
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+}
+
+.info-escuela .date1{
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.info-escuela .date1 p{
+    margin-left: 5px;
+}
+.info-escuela .date2{
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.info-escuela .date2 a{
+    color: #0031b7;
+    display: flex;
+}
+.info-escuela .date2:hover{
+    text-decoration:underline;
+}
+.info-escuela .date2 img{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    height: 18px;
+    width: 18px;
+}
+.info-escuela .date2 a{
+    text-decoration: none;
+}
+.info-escuela .date2 a:hover{
+    text-decoration: underline;
+}
+.info-escuela .date3{
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.info-escuela .date3 a{
+    color: #000000;
+    text-decoration: none;
+}
+.info-escuela .date3 a:hover{
+    text-decoration: underline;
+}
+.info-escuela .date4{
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.info-escuela .date4 a{
+    color: #0031b7;
+}
+
+/*boton editar*/
+.edit-menu{
+    position: relative;
+}
+.edit-menu .btn-edit{
+    background: #2b4aed;
+    position: relative;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1.4px solid #484848;
+    border-radius: 9999px;
+}
+.edit-menu .btn-edit img{
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (max-width: 1420px){
+    .content-escuelas{
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .menu-content{
+        padding: 0 1rem;
+    }
+    .content-escuelas{
+        flex-direction: column;
+        max-height: 600px;
+    }
+    .content-escuelas .foto-escuela .image-direccion{
+        max-width: 100%;
+    }
+    .content-escuelas .foto-escuela .image-direccion img{
+        max-height: 230px;
+    }
+    .info-escuela{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .footer{
+        flex-direction: column;
+    }
+    .fcabezera{
+        padding: 15px 10px 0 10px;
+    }
+    .footer-links{
+        margin-top: 10px;
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .menu-content{
+        flex-direction: column;
+    }
+    .logo{
+        width: 80px;
+    }
+    .support{
+        margin-bottom: 10px;
+    }
+}
